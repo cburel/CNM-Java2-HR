@@ -49,6 +49,12 @@ public class Main {
 
         System.out.println();
 
+        // check to ensure a file name was entered in the terminal
+        if (args.length == 0) {
+            System.err.println("File name was not entered.");
+            System.exit(1);
+        }
+
         // prompt for the name of the file to read into the program
         String fileName = args[0];
 
@@ -97,6 +103,7 @@ public class Main {
         System.out.println(ps.get(0).toString());
 
         // test arraylist
+        // TODO: add name, height (cm), weight (kg) header
         System.out.println("List of people:");
         for (Person person : ps.people) {
             System.out.println(person);

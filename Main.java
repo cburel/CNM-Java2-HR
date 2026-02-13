@@ -39,8 +39,8 @@ public class Main {
 
         System.out.println();
 
-        // the name of the file to read into the program
-        String fileName = "hr.txt";
+        // prompt for the name of the file to read into the program
+        String fileName = args[0];
 
         // test adding a person and print their info
         Person p = new Person("Koopa", 50, 50);

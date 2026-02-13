@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "15_nintendo_hr_inheritance_21347494",
+            "args": "${command:SpecifyProgramArgs}"
+        }
+    ]
+}

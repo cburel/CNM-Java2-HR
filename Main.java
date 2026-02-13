@@ -1,4 +1,14 @@
 
+/**
+ * @author Celeste Burel
+ * Date: 2/22/2026
+ * Purpose: To practice inheritance/using interfaces.
+ *      Part 1: Set up Person, PersonList, and PersonSet. Test instantiating Person,
+ *          PersonSet. Test adding Person to PersonSet. Test printing HR list to
+ *          console.
+ * Sources: N/A
+ */
+
 /*
 This code is provided to give you a
 starting place. It should be modified.

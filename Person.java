@@ -11,7 +11,10 @@ public class Person {
     @Override
     public String toString() {
         // TODO change this to be a database-ready string
-        return name + ", " + height + ", " + weight;
+        String output = String.format("%s %.0f %.0f", name, height, weight);
+        // return name + ", " + height + ", " + weight;
+
+        return output;
     }
 
     @Override

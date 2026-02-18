@@ -11,7 +11,7 @@ public class Person {
     @Override
     public String toString() {
 
-        // TODO change this to be a database-ready string, check spacing requirements
+        // print as database-ready string
         String output = String.format("%-10s %-10.0f %-10.0f", name, height, weight);
 
         return output;

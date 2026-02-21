@@ -28,4 +28,16 @@ public class PersonSet implements PersonList {
     public Person get(int index) {
         return people.get(index);
     }
+
+    public String toString(ArrayList<Person> arr) {
+
+        String peopleStr = "";
+
+        for (int i = 0; i < arr.size(); i++) {
+            peopleStr += arr.get(i);
+        }
+
+        // TODO: match format of hr.txt
+        return peopleStr;
+    }
 }

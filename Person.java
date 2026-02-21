@@ -1,4 +1,4 @@
-public class Person {
+public class Person implements Comparable<Person> {
     String name;
     double height, weight;
 
@@ -47,5 +47,14 @@ public class Person {
 
         // if the final check above is not true, then the objects are not equal
         return false;
+    }
+
+    @Override
+    public int compareTo(Person other) {
+
+        // returns -1 if this.name < other.name (this preceeds other alphabetically),
+        // returns 0 if this.name == other.name (this is equal to other),
+        // returns 1 if this.name > other.name (this follows other)
+        return this.name.compareTo(other.name);
     }
 }

@@ -107,7 +107,7 @@ public class Main {
                 // var into a new Person to avoid the imperial set converting measurements
                 // on person var, which will break the ordered set logic and cause duplicate
                 // data in the ordered set.
-                imperialPeople.add(new Person(person.name, person.height, person.weight));
+                imperialPeople.add(new Person(person.getName(), person.getHeight(), person.getWeight()));
             }
         } catch (FileNotFoundException e) {
 

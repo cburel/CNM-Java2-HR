@@ -3,17 +3,20 @@ public class PersonImperialSet extends PersonSet {
     @Override
     public void add(Person p) {
 
-        // DEBUG
-        System.out.println("DEBUG: height and weight before conversion: " + p.height + ", " + p.weight);
-
         // convert cm to in
-        p.height /= 2.54;
+        p.setHeight(convertHeight(p.getHeight()));
 
         // convert kg to lb
-        p.weight *= 2.20462;
-
-        System.out.println("DEBUG: height and weight AFTER conversion: " + p.height + ", " + p.weight);
+        p.setWeight(convertWeight(p.getWeight()));
 
         super.add(p);
+    }
+
+    private double convertHeight(double height) {
+        return height /= 2.54;
+    }
+
+    private double convertWeight(double weight) {
+        return weight *= 2.20462;
     }
 }

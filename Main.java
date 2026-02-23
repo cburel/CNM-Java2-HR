@@ -126,13 +126,17 @@ public class Main {
         }
 
         System.out.println("Ordered list of people:");
-        System.out.println(orderedPeople.writeHeader());
+        // System.out.println(orderedPeople.writeHeader());
+        Header orderedHeader = new Header("(cm)", "(kg)");
+        System.out.println(orderedHeader);
         for (Person person : orderedPeople.people) {
             System.out.println(person.toString());
         }
 
         System.out.println("List of people with imperial measurements:");
-        System.out.println(imperialPeople.writeHeader());
+        // System.out.println(imperialPeople.writeHeader());
+        Header imperialHeader = new Header("(in)", ("(lb)"));
+        System.out.println(imperialHeader);
         for (Person person : imperialPeople.people) {
             System.out.println(person.toString());
         }

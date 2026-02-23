@@ -19,12 +19,4 @@ public class PersonImperialSet extends PersonSet {
     private double convertWeight(double weight) {
         return weight *= 2.20462;
     }
-
-    @Override
-    public String writeHeader() {
-        heightMeasure = "(in)";
-        weightMeasure = "(lb)";
-
-        return super.writeHeader();
-    }
 }

@@ -42,14 +42,4 @@ public class PersonSet implements PersonList {
 
         return peopleStr;
     }
-
-    @Override
-    public String writeHeader() {
-
-        // print as txt file header
-        String output = String.format("%-10s %-20s %-20s", "Name", "Height " + heightMeasure,
-                "Weight " + weightMeasure);
-
-        return output;
-    }
 }

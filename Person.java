@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Person implements Comparable<Person> {
     String name;
     double height, weight;
@@ -12,7 +14,7 @@ public class Person implements Comparable<Person> {
     public String toString() {
 
         // print as database-ready string
-        String output = String.format("%-10s %-10.0f %-10.0f", name, height, weight);
+        String output = String.format("%-10s %-10.2f %-10.2f", name, height, weight);
 
         return output;
     }
@@ -45,8 +47,12 @@ public class Person implements Comparable<Person> {
             return true;
         }
 
-        // if the final check above is not true, then the objects are not equal
-        return false;
+        // check for equality conditions: name values are the same, height values are
+        // the same, weight values are the same. returns false if any of these values do
+        // not match. otherwise, returns true.
+        return (Objects.equals(this.name, p.name) &&
+                Double.compare(this.height, p.height) == 0 &&
+                Double.compare(this.weight, p.weight) == 0);
     }
 
     @Override

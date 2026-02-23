@@ -44,8 +44,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-import javax.print.attribute.standard.PrinterStateReasons;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -122,20 +120,21 @@ public class Main {
         System.out.println(ps.get(0).toString());
 
         // test arraylist
-        // TODO: add name, height (cm), weight (kg) header
         System.out.println("List of people:");
         for (Person person : ps.people) {
             System.out.println(person);
         }
 
         System.out.println("Ordered list of people:");
+        System.out.println(orderedPeople.writeHeader());
         for (Person person : orderedPeople.people) {
-            System.out.println(person);
+            System.out.println(person.toString());
         }
 
         System.out.println("List of people with imperial measurements:");
+        System.out.println(imperialPeople.writeHeader());
         for (Person person : imperialPeople.people) {
-            System.out.println(person);
+            System.out.println(person.toString());
         }
 
         /*

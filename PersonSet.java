@@ -4,6 +4,9 @@ public class PersonSet implements PersonList {
 
     protected ArrayList<Person> people = new ArrayList<>();
 
+    String heightMeasure = "(cm)";
+    String weightMeasure = "(kg)";
+
     /**
      * Adds a given person to a list if the person is not already in it
      * 
@@ -37,7 +40,16 @@ public class PersonSet implements PersonList {
             peopleStr += arr.get(i);
         }
 
-        // TODO: match format of hr.txt
         return peopleStr;
+    }
+
+    @Override
+    public String writeHeader() {
+
+        // print as txt file header
+        String output = String.format("%-10s %-20s %-20s", "Name", "Height " + heightMeasure,
+                "Weight " + weightMeasure);
+
+        return output;
     }
 }

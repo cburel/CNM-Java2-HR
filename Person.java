@@ -41,7 +41,7 @@ public class Person implements Comparable<Person> {
 
         // if name, height, and weight are the same on both this object and the other
         // object, this entry is equal to the other
-        if (p.name.equals(this.name) && p.height == this.height && this.weight == this.weight) {
+        if (p.name.equals(this.name) && p.height == this.height && p.weight == this.weight) {
             return true;
         }
 

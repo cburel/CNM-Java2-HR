@@ -44,6 +44,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+import javax.print.attribute.standard.PrinterStateReasons;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -67,6 +69,12 @@ public class Main {
         ps.add(p);
         System.out.println(ps.get(0));
 
+        // test adding ordered personset
+        PersonOrderedSet orderedPeople = new PersonOrderedSet();
+
+        // test adding imperial measurement personset
+        PersonImperialSet imperialPeople = new PersonImperialSet();
+
         // try to open the file
         try (Scanner fileReader = new Scanner(new File(fileName))) {
 
@@ -88,7 +96,18 @@ public class Main {
                 // run this person through the PersonList add method, which will add them to the
                 // list if they are not a duplicate
                 Person person = new Person(name, height, weight);
+
+                // add person to standard person set
                 ps.add(person);
+
+                // add person to ordered person set
+                orderedPeople.add(person);
+
+                // add person to imperial measurement person set. "clone" the data from person
+                // var into a new Person to avoid the imperial set converting measurements
+                // on person var, which will break the ordered set logic and cause duplicate
+                // data in the ordered set.
+                imperialPeople.add(new Person(person.name, person.height, person.weight));
             }
         } catch (FileNotFoundException e) {
 
@@ -106,6 +125,16 @@ public class Main {
         // TODO: add name, height (cm), weight (kg) header
         System.out.println("List of people:");
         for (Person person : ps.people) {
+            System.out.println(person);
+        }
+
+        System.out.println("Ordered list of people:");
+        for (Person person : orderedPeople.people) {
+            System.out.println(person);
+        }
+
+        System.out.println("List of people with imperial measurements:");
+        for (Person person : imperialPeople.people) {
             System.out.println(person);
         }
 

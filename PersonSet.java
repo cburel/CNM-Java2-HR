@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+/**
+ * The set of Person objects. Creates the ArrayList of Person objects and allows
+ * for adding Person objects into that ArrayList. Additionally allows for
+ * fetching a Person at a given index and printing the ArrayList.
+ */
 public class PersonSet implements PersonList {
 
     protected ArrayList<Person> people = new ArrayList<>();

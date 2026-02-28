@@ -38,7 +38,7 @@ public class Person implements Comparable<Person> {
     public String toString() {
 
         // print as database-ready string
-        String output = String.format("%-10s %-20.2f %-20.2f", name, height, weight);
+        String output = String.format("%-10s %10.2f %20.2f", name, height, weight);
 
         return output;
     }

@@ -10,7 +10,7 @@ public class Header {
 
     @Override
     public String toString() {
-        String output = String.format("%-10s %-20s %-20s", "Name", "Height " + heightMeasure,
+        String output = String.format("%-10s %10s %20s", "Name", "Height " + heightMeasure,
                 "Weight " + weightMeasure);
 
         return output;

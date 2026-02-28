@@ -124,6 +124,9 @@ public class Main {
 
             // release resources
             fileWriterImperial.close();
+
+            // print confirmation message
+            System.out.println("Imperial set file was successfully created.");
         } catch (IOException e) {
 
             // something went wrong. print exception info
@@ -149,6 +152,9 @@ public class Main {
 
             // free resources
             fileWriterOrdered.close();
+
+            // print confirmation message
+            System.out.println("Ordered set file was successfully created.");
         } catch (IOException e) {
 
             // something went wrong. print exception info

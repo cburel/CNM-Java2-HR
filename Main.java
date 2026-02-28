@@ -59,13 +59,13 @@ public class Main {
         String fileName = args[0];
 
         // test adding a person and print their info
-        Person p = new Person("Koopa", 50, 50);
-        System.out.println(p);
+        // Person p = new Person("Koopa", 50, 50);
+        // System.out.println(p);
 
         // test adding a person set and adding a person to the person set, then print
         PersonSet ps = new PersonSet();
-        ps.add(p);
-        System.out.println(ps.get(0));
+        // ps.add(p);
+        // System.out.println(ps.get(0));
 
         // test adding ordered personset
         PersonOrderedSet orderedPeople = new PersonOrderedSet();
@@ -89,7 +89,8 @@ public class Main {
                 double weight = fileReader.nextDouble();
 
                 // test-print each person's info
-                System.out.println("Name: " + name + ", Height: " + height + ", Weight: " + weight);
+                // System.out.println("Name: " + name + ", Height: " + height + ", Weight: " +
+                // weight);
 
                 // run this person through the PersonList add method, which will add them to the
                 // list if they are not a duplicate
@@ -116,44 +117,48 @@ public class Main {
             System.exit(1);
         }
 
-        // test overridden toString in Person.java
-        System.out.println(ps.get(0).toString());
+        // System.out.println("Ordered list of people:");
+        // Header orderedHeader = new Header("(cm)", "(kg)");
+        // System.out.println(orderedHeader);
+        // for (Person person : orderedPeople.people) {
+        // System.out.println(person.toString());
+        // }
 
-        // test arraylist
-        System.out.println("List of people:");
-        for (Person person : ps.people) {
-            System.out.println(person);
+        // System.out.println("List of people with imperial measurements:");
+        // Header imperialHeader = new Header("(in)", ("(lb)"));
+        // System.out.println(imperialHeader);
+        // for (Person person : imperialPeople.people) {
+        // System.out.println(person.toString());
+        // System.out.print(person.toString() + "\n");
+        // }
+
+        try {
+            FileWriter fileWriterImperial = new FileWriter("hr_imperial_set_output.txt");
+            Header imperialHeader = new Header("(in)", ("(lb)"));
+            fileWriterImperial.write(imperialHeader.toString() + "\n");
+            for (Person person : imperialPeople.people) {
+                fileWriterImperial.write(person.toString() + "\n");
+            }
+            fileWriterImperial.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e);
+            System.exit(1);
         }
 
-        System.out.println("Ordered list of people:");
-        // System.out.println(orderedPeople.writeHeader());
-        Header orderedHeader = new Header("(cm)", "(kg)");
-        System.out.println(orderedHeader);
-        for (Person person : orderedPeople.people) {
-            System.out.println(person.toString());
+        try {
+            FileWriter fileWriterOrdered = new FileWriter("hr_ordered_set_output.txt");
+            Header orderedHeader = new Header("(cm)", ("(kg)"));
+            fileWriterOrdered.write(orderedHeader.toString() + "\n");
+            for (Person person : orderedPeople.people) {
+                fileWriterOrdered.write(person.toString() + "\n");
+            }
+            fileWriterOrdered.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e);
+            System.exit(1);
         }
 
-        System.out.println("List of people with imperial measurements:");
-        // System.out.println(imperialPeople.writeHeader());
-        Header imperialHeader = new Header("(in)", ("(lb)"));
-        System.out.println(imperialHeader);
-        for (Person person : imperialPeople.people) {
-            System.out.println(person.toString());
-        }
-
-        /*
-         * try
-         * {
-         * FileWriter fileWriterOrder = new FileWriter("outputfile.txt");
-         * fileWriterOrder.write("testing");
-         * fileWriterOrder.close();
-         * }
-         * catch(IOException e)
-         * {
-         * e.printStackTrace();
-         * System.out.println(e);
-         * System.exit(1);
-         * }
-         */
     }
 }
